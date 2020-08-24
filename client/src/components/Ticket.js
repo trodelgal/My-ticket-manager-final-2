@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import Label from './Label';
+import axios from 'axios';
 
 
-function Ticket({tickets}){
-    // const sliceTick= tickets.slice(0,1)
+function Ticket({tickets, toHide, hiddenTickets}){
+    let num=0
+    if(hiddenTickets[0]!==undefined){
+        num= hiddenTickets.length
+    }
+   
     return(
-        <div className="ticket" style={{}}>                  
+        <div>
+            <div>{num}</div>              
             {
-                tickets.map((value,i)=>{            
+                tickets.map((value,i)=>{   
                     return(
-                        <div key={i}>
-                            <div>{value.title}</div>
+                        <div className="ticket" key={i}>
+                            <h5>{value.title}</h5>
+                            <button className="hideTicketButton" onClick={()=>toHide(i)}>hide</button>
                             <div>{value.content}</div>
                             <span>By {value.userEmail}   </span>
                             <span> date: {new Date(value.creationTime).toLocaleString()}</span>
                             <Label labels={value.labels}/>
                         </div>
-                    )
+                        )
                 })
             }
         </div>

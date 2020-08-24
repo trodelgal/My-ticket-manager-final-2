@@ -6,11 +6,11 @@ function Labels({labels}){
         realLabels=labels
     }
     return(
-        <div className="lable">
+        <div>
             {
                 realLabels.map((value,i)=>{
                     return(
-                    <div key={i}>{value}</div>
+                    <div className="label" key={i}>{value}</div>
                     )
                 })
             }
