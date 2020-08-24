@@ -6,6 +6,8 @@ const fs = require('fs').promises;
 const dataPathFile = './data.json';
 app.use(express.json());
 
+// GET THE TICKETS FROM DATA.JSON FILTER BY SEARCH TEXT
+
 app.get('/api/tickets', async (req, res) => {
   const tickets = await fs.readFile(dataPathFile, 'utf-8');
   const jsTickets = JSON.parse(tickets);
@@ -19,6 +21,8 @@ app.get('/api/tickets', async (req, res) => {
   }
 });
 
+// POST- CHANGE THE TICKET DONE PROPERTY TO TRUE BY ID
+
 app.post('/api/tickets/:ticketId/done', async (req, res) => {
   const tickets = await fs.readFile(dataPathFile, 'utf-8');
   const jsTickets = JSON.parse(tickets);
@@ -31,6 +35,8 @@ app.post('/api/tickets/:ticketId/done', async (req, res) => {
 
   res.send({ updated: true });
 });
+
+// POST- CHANGE THE TICKET DONE PROPERTY TO FALSE BY ID
 
 app.post('/api/tickets/:ticketId/undone', async (req, res) => {
   const tickets = await fs.readFile(dataPathFile, 'utf-8');
