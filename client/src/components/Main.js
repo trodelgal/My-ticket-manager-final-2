@@ -32,7 +32,7 @@ function Main(){
     return(
         <div>        
             <input id="searchInput" placeholder='Search products' onChange={e => setSearch(e.target.value)}/>
-            <button className="restoreHideTickets" onClick={restoreTickets}>restore</button>    
+            <button id="restoreHideTickets" onClick={restoreTickets}>restore</button>    
             <Ticket tickets={tickets} toHide={toHide} hiddenTickets={hiddenTickets} />
         </div>
     )
