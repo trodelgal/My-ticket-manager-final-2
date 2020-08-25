@@ -1,29 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import Label from './Label';
 
-
-function Ticket({tickets, hideTheTicket, hideTicketsList, doneThisTicket}){
-    //NUMBER OF THE TICKETS IN THE HIDE LIST
-    let numberOfTicketsInHideList=0
-    if(hideTicketsList[0]!==undefined){
-        numberOfTicketsInHideList= hideTicketsList.length
-    }
-   
+function DoneTickets({tickets,undoneThisTicket,hideTheTicket}){
+  
     return(
         <div>
-            <div id="hideTicketsCounter">{numberOfTicketsInHideList}</div>              
+            <h1>done list</h1>
             {
                 tickets.map((value,i)=>{  
-                    if(!value.done){ 
+                    if(value.done){ 
                     return(
                         <div className="ticket" key={i}>
                             <h5>{value.title}</h5>
-                            <button className="hideTicketButton" onClick={()=>hideTheTicket(i)}>hide</button>
                             <div>{value.content}</div>
                             <span>By {value.userEmail}   </span>
                             <span> date: {new Date(value.creationTime).toLocaleString()}</span>
                             <Label labels={value.labels}/>
-                            <button onClick={()=>doneThisTicket(value.id)}>done</button>
+                            <button onClick={()=>undoneThisTicket(value.id)}>undone</button>
                         </div>
                         )
                     }
@@ -33,4 +26,4 @@ function Ticket({tickets, hideTheTicket, hideTicketsList, doneThisTicket}){
     )
 }
 
-export default Ticket;
+export default DoneTickets;

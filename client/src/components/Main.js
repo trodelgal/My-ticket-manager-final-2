@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Ticket from './Ticket'
+import DoneTickets from './DoneTickets'
 import axios from 'axios';
 
 function Main(){
@@ -12,6 +13,7 @@ function Main(){
     useEffect(()=>{
         const showSearch= async()=>{
             const response = await axios.get(`/api/tickets?searchText=${search}`)
+            console.log(response);
             setTickets(response.data)
             setHideTicketsList([])
         }
@@ -32,12 +34,25 @@ function Main(){
         setTickets(hideTicketsList.concat(tickets))
         setHideTicketsList([])
     }
+    async function doneThisTicket(id){
+        const response = await axios.post(`/api/tickets/${id}/done`);
+        const newTicketList = await axios.get(`/api/tickets?searchText=${search}`)
+        setTickets(newTicketList.data)
+    }
+    async function undoneThisTicket(id){
+        const response = await axios.post(`/api/tickets/${id}/undone`);
+        const newTicketList = await axios.get(`/api/tickets?searchText=${search}`)
+        setTickets(newTicketList.data)
+    }
 
     return(
         <div>        
             <input id="searchInput" placeholder='Search products' onChange={e => setSearch(e.target.value)}/>
-            <button id="restoreHideTickets" onClick={restoreTickets}>restore</button>    
-            <Ticket tickets={tickets} hideTheTicket={hideTheTicket} hideTicketsList={hideTicketsList} />
+            <button id="restoreHideTickets" onClick={restoreTickets}>restore</button>  
+            <div className="mainPart">  
+                <Ticket tickets={tickets} hideTheTicket={hideTheTicket} hideTicketsList={hideTicketsList} doneThisTicket={doneThisTicket} />
+                <DoneTickets tickets={tickets} undoneThisTicket={undoneThisTicket}/>
+            </div>
         </div>
     )
 }
