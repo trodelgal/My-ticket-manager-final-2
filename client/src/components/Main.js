@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Ticket from './Ticket'
 import DoneTickets from './DoneTickets'
 import axios from 'axios';
-import './Main.css';
+import './style/Main.css';
 import Button from '@material-ui/core/Button';
 
 function Main(){

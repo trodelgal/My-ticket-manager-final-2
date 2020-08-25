@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Label from './Label';
-import './Ticket.css';
+import Content from './Content';
+import './style/Ticket.css';
 import DoneSharpIcon from '@material-ui/icons/DoneSharp';
 import Card from '@material-ui/core/Card';
 import VisibilityOffSharpIcon from '@material-ui/icons/VisibilityOffSharp';
@@ -30,7 +31,9 @@ function Ticket({tickets, hideTheTicket, hideTicketsList, doneThisTicket,restore
                         <div className="ticket" key={i}>
                             <Card>
                                 <h4 className="ticketTitle">{value.title}</h4>
-                                <div className="content">{value.content}</div>
+                                <div className="content">
+                                <Content contentValue={value.content}/>
+                                </div>
                                 <div className="labelsContainer">
                                 <Label labels={value.labels}/>
                                 </div>

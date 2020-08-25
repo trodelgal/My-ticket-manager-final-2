@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Label.css';
+import './style/Label.css';
 
 function Labels({labels}){
     //CHECK IF THE TICKET HAS LABELS
