@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Label.css';
 
 function Labels({labels}){
     //CHECK IF THE TICKET HAS LABELS
@@ -7,7 +8,7 @@ function Labels({labels}){
         realLabels=labels
     }
     return(
-        <div>
+        <>
             {
                 realLabels.map((value,i)=>{
                     return(
@@ -15,7 +16,7 @@ function Labels({labels}){
                     )
                 })
             }
-        </div>
+        </>
     )
 }
 

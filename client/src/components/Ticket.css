@@ -1,0 +1,43 @@
+.liveTicketList{
+width: 75%;    
+}
+.ticket{
+    position: relative;
+    margin: 8px 8px;
+    background-color:white;
+    border-radius: 15px;
+}
+#listTitle{
+    position: relative;
+    margin-left: 39%;
+}
+.ticket:hover{
+    -webkit-box-shadow: 2px 5px 12px 5px rgba(0,0,0,0.7); 
+    box-shadow: 2px 5px 12px 5px rgba(0,0,0,0.7);
+}
+.hideTicketButton{
+    position: absolute;
+    right: 60px;
+    bottom: 5px;  
+}
+.doneButton{
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+}
+.labelsContainer{
+    display: flex;
+}
+.userEmail{
+    margin-right: 10px;
+}
+#results{
+    position: relative;
+    margin-left: 30%;
+}
+.content{
+    margin: 10px;
+}
+.ticketTitle{
+    margin-left: 15px;
+}
