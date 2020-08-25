@@ -8,10 +8,11 @@ function Ticket({tickets, toHide, hiddenTickets}){
     if(hiddenTickets[0]!==undefined){
         num= hiddenTickets.length
     }
+    // const checkTest= tickets.splice(0,3)
    
     return(
         <div>
-            <div>{num}</div>              
+            <div id="hideTicketsCounter">{num}</div>              
             {
                 tickets.map((value,i)=>{   
                     return(

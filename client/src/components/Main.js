@@ -7,10 +7,6 @@ function Main(){
     const[search, setSearch]=useState('');
     const[hiddenTickets, setHiddenTickets]= useState([])
 
-    useEffect(async()=>{
-            const response = await axios.get(`/api/tickets/`)
-            setTickets(response.data)
-    },[]);
 
     useEffect(()=>{
         const showSearch= async()=>{
