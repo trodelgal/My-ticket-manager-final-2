@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 function Labels({labels}){
+    //CHECK IF THE TICKET HAS LABELS
     let realLabels=[];
     if(labels!==undefined){
         realLabels=labels
