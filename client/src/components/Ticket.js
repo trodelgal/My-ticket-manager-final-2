@@ -4,6 +4,7 @@ import './Ticket.css';
 import DoneSharpIcon from '@material-ui/icons/DoneSharp';
 import Card from '@material-ui/core/Card';
 import VisibilityOffSharpIcon from '@material-ui/icons/VisibilityOffSharp';
+import Button from '@material-ui/core/Button';
 
 
 
@@ -13,7 +14,7 @@ function Ticket({tickets, hideTheTicket, hideTicketsList, doneThisTicket,restore
     let restoreButton = '';
     if(hideTicketsList[0]!==undefined){
         numberOfTicketsInHideList= hideTicketsList.length
-        restoreButton=<span>- <button id="restoreHideTickets" onClick={restoreTickets}>restore</button></span>;
+        restoreButton=<span>-<Button id="restoreHideTickets" onClick={restoreTickets}>restore</Button></span>;
     }
 
     

@@ -1,9 +1,11 @@
 #searchLine{
-    position: relative;
-    width: 100%;
-    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    z-index:9999;
     top: 0px;
-    background-color: rgb(178, 203, 250);
+    height: 80px;
+    background-color: rgb(192, 212, 250);;
 }
 #searchInput{
     padding: 0.5rem 1rem;
@@ -15,12 +17,16 @@
     font-size: 1.15rem;
     margin: 0.25rem;
     border-radius: 25px;
-    margin-left: 28%;
-    margin-bottom: 20px;
+    margin-right: 50px;
+    margin-top: 20px;
 }
+#navButtons{
+    margin-right:15px;
+    margin-top: 15px;
+}
+
 .mainPart{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(178, 203, 250);
 }

@@ -1,4 +1,4 @@
-.liveTicketList{
+.liveTicketList, #doneTickets{
 width: 75%;    
 }
 .ticket{

@@ -3,6 +3,7 @@ import Ticket from './Ticket'
 import DoneTickets from './DoneTickets'
 import axios from 'axios';
 import './Main.css';
+import Button from '@material-ui/core/Button';
 
 function Main(){
     //STATES
@@ -50,12 +51,17 @@ function Main(){
 
     return(
         <>
-            <div id="searchLine">        
+            <div id="searchLine"> 
+                <h1>TICKET MANAGER</h1>
                 <input id="searchInput" placeholder='Search tickets' onChange={e => setSearch(e.target.value)}/>
+                <div id="navButtons">
+                    <Button> <a href="#doneTickets">show the done tickets</a></Button>       
+                    <Button><a href="#listTitle">tickets</a></Button>
+                </div>
             </div>
             <div className="mainPart">  
-                <Ticket tickets={tickets} hideTheTicket={hideTheTicket} hideTicketsList={hideTicketsList} doneThisTicket={doneThisTicket} restoreTickets={restoreTickets} />
-                <DoneTickets tickets={tickets} undoneThisTicket={undoneThisTicket}/>
+                <Ticket id="theTickets"tickets={tickets} hideTheTicket={hideTheTicket} hideTicketsList={hideTicketsList} doneThisTicket={doneThisTicket} restoreTickets={restoreTickets} />
+                <DoneTickets id="theDoneTickets" tickets={tickets} undoneThisTicket={undoneThisTicket}/>
             </div>
         </>
     )
