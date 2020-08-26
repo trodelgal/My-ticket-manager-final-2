@@ -1,7 +1,7 @@
-.liveTicketList, #doneTickets{
+.liveTicketList, #thisTicketsDone{
 width: 75%;    
 }
-.ticket{
+.ticket, .doneTicket{
     position: relative;
     margin: 8px 8px;
     background-color:white;
