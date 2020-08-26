@@ -67,11 +67,11 @@ describe(projectName, () => {
     await page.goto('http://localhost:3000/', { waitUntil: 'networkidle0' })
     const elements = await page.$$('.ticket');
     expect(elements.length).toBe(mockData.length);
-    const elementBeforeSeeMore = await page.$eval('.contentText', e=>e.innerHTML);
+    const elementBeforeSeeMore = await page.$eval('.contentText', e=>e.innerText);
     expect(elementBeforeSeeMore.length<700).toBe(true)
     const seeMoreButton = await page.$(" #seeMoreButton")
     await seeMoreButton.click();
-    const elementsAfterSeeMore = await page.$eval('.contentText', e=>e.innerHTML);
+    const elementsAfterSeeMore = await page.$eval('.contentText', e=>e.innerText);
     expect(elementsAfterSeeMore.length<700).toBe(false);
   })
 
