@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Card from '@material-ui/core/Card';
 import Label from './Label';
 import Content from './Content';
 import './style/Ticket.css';
-import Card from '@material-ui/core/Card';
 
 
-function DoneTickets({tickets,undoneThisTicket,hideTheTicket}){
+function DoneTickets({tickets,undoneThisTicket}){
   
     return(
         <div id="doneTickets">
