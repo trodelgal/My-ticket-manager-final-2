@@ -4,9 +4,37 @@
     position: sticky;
     z-index:9999;
     top: 0px;
-    height: 80px;
-    background-color: rgb(192, 212, 250);;
+    height: 90px;
+    background-color: rgb(6, 26, 65);
 }
+
+#webTitle {
+    width: 350px;
+    height: 90px;
+    position: relative;
+    margin-top: 0px;
+    padding-left: 15px;
+    background-color: rgb(255, 255, 255);
+  }
+  #webTitle:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 90px 90px;
+    border-color: transparent transparent rgb(6, 26, 65) transparent;
+  }
+  #mainTitle{
+    font-size: 30px;
+    margin-top: 0px;
+  }
+  #secondTitle{
+      font-size: 19px;
+  }
+
 #searchInput{
     padding: 0.5rem 1rem;
     height: 30px;
@@ -15,14 +43,18 @@
     background-color: #fff;
     width: 450px;
     font-size: 1.15rem;
-    margin: 0.25rem;
+    margin: 0.20rem;
     border-radius: 25px;
-    margin-right: 50px;
+    margin-right: 80px;
     margin-top: 20px;
 }
 #navButtons{
     margin-right:15px;
-    margin-top: 15px;
+    margin-top: 25px;
+    
+}
+a{
+    color: white;
 }
 
 .mainPart{

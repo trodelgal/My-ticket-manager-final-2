@@ -52,10 +52,13 @@ function Main(){
     return(
         <>
             <div id="searchLine"> 
-                <h1>TICKET MANAGER</h1>
+                <div id="webTitle">
+                    <h1 id="mainTitle">TICKET MANAGER</h1>
+                    <p id="secondTitle">WE HERE TO HELP OUR CLIENTS</p>
+                </div>
                 <input id="searchInput" placeholder='Search tickets' onChange={e => setSearch(e.target.value)}/>
                 <div id="navButtons">
-                    <Button> <a href="#doneTickets">show the done tickets</a></Button>       
+                    <Button> <a href="#doneTickets">done tickets</a></Button>       
                     <Button><a href="#listTitle">tickets</a></Button>
                 </div>
             </div>

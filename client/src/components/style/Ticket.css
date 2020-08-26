@@ -30,6 +30,10 @@ width: 75%;
 }
 .userEmail{
     margin-right: 10px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.date{
+    font-family: 'Ubuntu', sans-serif;
 }
 #results{
     position: relative;

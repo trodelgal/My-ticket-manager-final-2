@@ -37,7 +37,7 @@ function Ticket({tickets, hideTheTicket, hideTicketsList, doneThisTicket,restore
                                 <div className="labelsContainer">
                                 <Label labels={value.labels}/>
                                 </div>
-                                <span className="userEmail">By {value.userEmail}</span>
+                                <span className="userEmail">By: {value.userEmail}</span>
                                 <span className="date"> date: {new Date(value.creationTime).toLocaleString()}</span>
                                 <button className="hideTicketButton" onClick={()=>hideTheTicket(i)}><VisibilityOffSharpIcon/></button>
                                 <button className="doneButton" onClick={()=>doneThisTicket(value.id)}><DoneSharpIcon/></button>
