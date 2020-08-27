@@ -21,18 +21,8 @@ jest.setTimeout(300000);
 const projectName = '1.Ticket Manager UI';
 describe(projectName, () => {
   beforeAll(async () => {
-    browser = await puppeteer.launch({
-        headless: false,
-      });
+    browser = await puppeteer.launch();
     page = await browser.newPage();
-    page.emulate({
-        viewport: {
-          width: 800,
-          height: 5000,
-          slowMo: 550
-        },
-        userAgent: ''
-      });
     useNock(page, ['http://localhost:3000/api']);
 
     await full4s.beforeAll();
