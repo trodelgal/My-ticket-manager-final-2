@@ -3,9 +3,13 @@ const nock = require('nock');
 const useNock = require('nock-puppeteer');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 // const full4s = require('@suvelocity/tester');
 >>>>>>> 945e52e73e9936cf4567bc5b6f30a746d981ffda
+=======
+const full4s = require('@suvelocity/tester');
+>>>>>>> parent of 945e52e... Update myTests.test.js
 =======
 const full4s = require('@suvelocity/tester');
 >>>>>>> parent of 945e52e... Update myTests.test.js
