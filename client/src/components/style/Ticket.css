@@ -1,5 +1,5 @@
 .liveTicketList, #thisTicketsDone{
-width: 75%;    
+    width: 75%;    
 }
 .ticket, .doneTicket{
     position: relative;
@@ -44,4 +44,12 @@ width: 75%;
 }
 .ticketTitle{
     margin-left: 15px;
+}
+#restoreHideTickets{
+    color:blue;
+}
+@media all and (max-width: 700px) {
+    .liveTicketList, #thisTicketsDone{
+        width: 85%;    
+    }
 }

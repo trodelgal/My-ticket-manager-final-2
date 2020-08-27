@@ -54,7 +54,6 @@ function Main() {
         <input id="searchInput" placeholder="Search tickets" onChange={(e) => setSearch(e.target.value)} />
         <div id="navButtons">
           <Button>
-            {' '}
             <a href="#thisTicketsDone">done tickets</a>
           </Button>
           <Button><a href="#listTitle">tickets</a></Button>
