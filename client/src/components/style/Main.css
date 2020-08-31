@@ -93,9 +93,9 @@ a{
         display: none; 
     }
 }
-@media all and (max-width: 850px) {
+@media all and (max-width: 900px) {
     #mainTitle{
-        font-size: 25px
+        font-size: 20px
     }
     #navButtons{
         margin-right:15px;
@@ -103,8 +103,8 @@ a{
     }
 }
 @media all and (max-width: 700px) {
-    #mainTitle{
-        font-size: 20px
+    #webTitle {
+        display: none;
     }
     #secondTitle{
         display: none; 
@@ -119,9 +119,6 @@ a{
     }
 }
 @media all and (max-width: 600px) {
-    #mainTitle{
-        font-size: 10px
-    }
     #navButtons{
         margin-top: 10px;
     }
@@ -131,9 +128,6 @@ a{
     }
 }
 @media all and (max-width: 500px) {
-    #webTitle {
-     display: none;
-      }
       #searchInput{
           width: 75%;
       }
