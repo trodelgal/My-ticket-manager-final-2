@@ -27,7 +27,8 @@ function Ticket({
     <div className="liveTicketList">
       <h1 id="listTitle">TICKETS</h1>
       <div id="results">
-        Showing
+        Showing:
+        {' '}
         {tickets.length}
         {' '}
         results (

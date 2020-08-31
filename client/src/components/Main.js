@@ -49,7 +49,7 @@ function Main() {
       <div id="searchLine">
         <div id="webTitle">
           <h1 id="mainTitle">TICKETS MANAGER</h1>
-          <p id="secondTitle">WE HERE TO HELP OUR CLIENTS</p>
+          <p id="secondTitle">WE ARE HERE TO HELP OUR CLIENTS</p>
         </div>
         <input id="searchInput" placeholder="Search tickets" onChange={(e) => setSearch(e.target.value)} />
         <div id="navButtons">
