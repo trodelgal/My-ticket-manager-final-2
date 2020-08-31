@@ -19,11 +19,13 @@
     position: absolute;
     right: 60px;
     bottom: 5px;  
+    cursor: pointer;
 }
 .doneButton{
     position: absolute;
     right: 10px;
     bottom: 5px;
+    cursor: pointer;
 }
 .labelsContainer{
     display: flex;
@@ -41,6 +43,19 @@
 }
 .content{
     margin: 10px;
+    margin-bottom: 5px;
+    width: 85%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis; 
+}
+.fullContent{
+    margin: 10px;
+    margin-bottom: 0%;
+    width: 85%;
+    white-space: pre-wrap;
 }
 .ticketTitle{
     margin-left: 15px;

@@ -4,7 +4,6 @@ import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import VisibilityOffSharpIcon from '@material-ui/icons/VisibilityOffSharp';
 import Label from './Label';
-import Content from './Content';
 import './style/Ticket.css';
 
 function Ticket({
@@ -21,6 +20,18 @@ function Ticket({
         <Button id="restoreHideTickets" onClick={restoreTickets}>restore</Button>
       </span>
     );
+  }
+  
+  const showAllComtent=(e)=>{
+    let contentFather = e.target.closest('div');
+    let content = contentFather.firstChild
+    if(content.className==='content'){
+      content.className = 'fullContent'
+      e.target.innerText='see less' 
+    }else{
+      content.className = 'content'
+      e.target.innerText='See more' 
+    }
   }
 
   return (
@@ -42,12 +53,19 @@ function Ticket({
       {
         tickets.map((value, i) => {
           if (!value.done) {
+            let seeMoreButton='';
+            if(value.content.length>350){
+              seeMoreButton=<Button id="seeMoreButton" onClick={(e)=>showAllComtent(e)}>See more</Button>
+            }
             return (
               <div className="ticket" key={i}>
                 <Card>
                   <h4 className="ticketTitle">{value.title}</h4>
-                  <div className="content">
-                    <Content contentValue={value.content} />
+                  <div>
+                    <div className="content">
+                      {value.content}
+                    </div>
+                    {seeMoreButton}
                   </div>
                   <div className="labelsContainer">
                     <Label labels={value.labels} />

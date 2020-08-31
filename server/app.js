@@ -38,10 +38,9 @@ app.post('/api/tickets/:ticketId/done', async (req, res) => {
       }
     });
     await fs.writeFile(dataPathFile, `${JSON.stringify(jsTickets)}`);
-
     res.send({ updated: true });
   } catch (error) {
-    console.error(error);
+    res.send({ updated: false });
   }
 });
 
@@ -60,7 +59,7 @@ app.post('/api/tickets/:ticketId/undone', async (req, res) => {
 
     res.send({ updated: true });
   } catch (error) {
-    console.error(error);
+    res.send({ updated: false });
   }
 });
 

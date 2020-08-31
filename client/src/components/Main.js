@@ -31,17 +31,21 @@ function Main() {
     setTickets(hideTicketsList.concat(tickets));
     setHideTicketsList([]);
   }
+
   // MOVE THE TICKET TO DONE LIST
   async function doneThisTicket(id) {
     await axios.post(`/api/tickets/${id}/done`);
     const newTicketList = await axios.get(`/api/tickets?searchText=${search}`);
     setTickets(newTicketList.data);
+    setHideTicketsList([]);
   }
+  
   // MOVE BACK THE TICKET TO TICKETS LIST
   async function undoneThisTicket(id) {
     await axios.post(`/api/tickets/${id}/undone`);
     const newTicketList = await axios.get(`/api/tickets?searchText=${search}`);
     setTickets(newTicketList.data);
+    setHideTicketsList([]);
   }
 
   return (
@@ -49,7 +53,7 @@ function Main() {
       <div id="searchLine">
         <div id="webTitle">
           <h1 id="mainTitle">TICKETS MANAGER</h1>
-          <p id="secondTitle">WE ARE HERE TO HELP OUR CLIENTS</p>
+          <p id="secondTitle">"WE ARE HERE TO HELP OUR CLIENTS"</p>
         </div>
         <input id="searchInput" placeholder="Search tickets" onChange={(e) => setSearch(e.target.value)} />
         <div id="navButtons">
