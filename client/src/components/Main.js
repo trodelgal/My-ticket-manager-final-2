@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import Ticket from './Ticket';
+import SideBar from './SideBar';
 import DoneTickets from './DoneTickets';
 import './style/Main.css';
 
@@ -10,6 +11,7 @@ function Main() {
   const [tickets, setTickets] = useState([]);
   const [search, setSearch] = useState('');
   const [hideTicketsList, setHideTicketsList] = useState([]);
+  const [openTikets, setOpenTickets]= useState(true)
 
   // ON LOAD AND SEARCH BRING THE RELEVANT TICKETS FROM SERVER
   useEffect(() => {
@@ -48,6 +50,14 @@ function Main() {
     setHideTicketsList([]);
   }
 
+  const showDoneTickets=() =>{
+    setOpenTickets(false)
+  }
+  const showOpenTickets=() =>{
+    setOpenTickets(true)
+  }
+
+
   return (
     <>
       <div id="searchLine">
@@ -56,16 +66,14 @@ function Main() {
           <p id="secondTitle">"WE ARE HERE TO HELP OUR CLIENTS"</p>
         </div>
         <input id="searchInput" placeholder="Search tickets" onChange={(e) => setSearch(e.target.value)} />
-        <div id="navButtons">
-          <Button>
-            <a href="#thisTicketsDone">done tickets</a>
-          </Button>
-          <Button><a href="#listTitle">tickets</a></Button>
-        </div>
+        <SideBar showDoneTickets={showDoneTickets} showOpenTickets={showOpenTickets}/>
       </div>
       <div className="mainPart">
-        <Ticket id="theTickets" tickets={tickets} hideTheTicket={hideTheTicket} hideTicketsList={hideTicketsList} doneThisTicket={doneThisTicket} restoreTickets={restoreTickets} />
-        <DoneTickets id="theDoneTickets" tickets={tickets} undoneThisTicket={undoneThisTicket} />
+        {
+          openTikets?
+          <Ticket id="theTickets" tickets={tickets} hideTheTicket={hideTheTicket} hideTicketsList={hideTicketsList} doneThisTicket={doneThisTicket} restoreTickets={restoreTickets} />:
+          <DoneTickets id="theDoneTickets" tickets={tickets} undoneThisTicket={undoneThisTicket} />
+        }
       </div>
     </>
   );

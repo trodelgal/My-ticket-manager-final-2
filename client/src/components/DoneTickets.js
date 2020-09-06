@@ -1,8 +1,8 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
+import SearchIcon from '@material-ui/icons/Search';
 import Label from './Label';
-import Content from './Content';
 import './style/Ticket.css';
 
 function DoneTickets({ tickets, undoneThisTicket }) {
@@ -18,10 +18,32 @@ function DoneTickets({ tickets, undoneThisTicket }) {
       e.target.innerText='See more' 
     }
   }
+  let doneTikets=[]
+  tickets.forEach(element => {
+    if(element.done)
+    doneTikets.push(element)
+  });
 
   return (
     <div id="thisTicketsDone">
       <h1 id="listTitle">DONE TICKETS</h1>
+      {doneTikets.length===0?
+      <div>there aren't done tickets</div>:
+        <div id="results">
+          Showing:
+          {' '}
+          {doneTikets.length}
+          {' '}
+          results
+        </div>
+      }
+      {
+        tickets.length===0 &&
+        <div id="noResult">
+          <SearchIcon/>
+          <p>No result</p>
+        </div>
+      }
       {
         tickets.map((value, i) => {
           if (value.done) {
@@ -32,7 +54,6 @@ function DoneTickets({ tickets, undoneThisTicket }) {
                   <div>
                     <div className="content">
                       {value.content}
-                      {/* <Content contentValue={value.content} /> */}
                     </div>
                     <Button id="seeMoreButton" onClick={(e)=>showAllComtent(e)}>See more</Button>
                   </div>

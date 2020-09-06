@@ -2,6 +2,7 @@ import React from 'react';
 import DoneSharpIcon from '@material-ui/icons/DoneSharp';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
+import SearchIcon from '@material-ui/icons/Search';
 import VisibilityOffSharpIcon from '@material-ui/icons/VisibilityOffSharp';
 import Label from './Label';
 import './style/Ticket.css';
@@ -9,6 +10,7 @@ import './style/Ticket.css';
 function Ticket({
   tickets, hideTheTicket, hideTicketsList, doneThisTicket, restoreTickets,
 }) {
+  console.log(tickets);
   // NUMBER OF THE TICKETS IN THE HIDE LIST
   let numberOfTicketsInHideList = 0;
   let restoreButton = '';
@@ -34,13 +36,19 @@ function Ticket({
     }
   }
 
+  let openTikets=[]
+  tickets.forEach(element => {
+    if(!element.done)
+    openTikets.push(element)
+  });
+
   return (
     <div className="liveTicketList">
-      <h1 id="listTitle">TICKETS</h1>
+      <h1 id="listTitle">OPEN TICKETS</h1>
       <div id="results">
         Showing:
         {' '}
-        {tickets.length}
+        {openTikets.length}
         {' '}
         results (
         <span id="hideTicketsCounter">{numberOfTicketsInHideList}</span>
@@ -49,7 +57,13 @@ function Ticket({
         {restoreButton}
         )
       </div>
-
+      {
+        tickets.length===0 &&
+        <div id="noResult">
+          <SearchIcon/>
+          <p>No result</p>
+        </div>
+      }
       {
         tickets.map((value, i) => {
           if (!value.done) {
