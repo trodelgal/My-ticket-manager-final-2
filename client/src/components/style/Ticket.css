@@ -10,6 +10,7 @@
 #listTitle{
     position: relative;
     margin-left: 39%;
+    text-decoration: underline;
 }
 .ticket:hover{
     -webkit-box-shadow: 2px 5px 12px 5px rgba(0,0,0,0.7); 
@@ -39,7 +40,7 @@
 }
 #results{
     position: relative;
-    margin-left: 30%;
+    margin-left: 42%;
 }
 .content{
     margin: 10px;
@@ -63,6 +64,24 @@
 #restoreHideTickets{
     color:blue;
 }
+#noDoneTickets{
+    position: relative;
+    margin-left: 31%;
+    margin-top:50px;
+}
+#noResult{
+    width: 100%;
+    position: relative;
+    left: 35%;
+}
+#SearchIcon{
+    position: absolute;
+    margin-top:5%;
+    right: 65%;
+    width: 300px;
+    height: 300px;
+}
+
 @media all and (max-width: 700px) {
     .liveTicketList, #thisTicketsDone{
         width: 85%;    

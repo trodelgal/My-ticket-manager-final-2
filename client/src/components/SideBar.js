@@ -1,34 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import './style/SideBar.css';
 
 
-const SideBar = ({ showDoneTickets, showOpenTickets, options, setOptions }) =>{
+const SideBar = ({ showDoneTickets, showOpenTickets }) =>{
     const [openSideBar, setOpenSideBar]= useState(false);
+    
    
 return(
-    <div  id="sidebar">
+    <>
     {
         !openSideBar? 
-        <Button color="secondary" onClick={()=>{setOpenSideBar(!openSideBar)}}>
+        <Button id="menuButton" onClick={()=>{setOpenSideBar(!openSideBar)}}>
             <MenuIcon id="MenuIcon"/>
-        </Button>:
-        <>
-         <Button color="secondary" onClick={()=>{setOpenSideBar(!openSideBar)}}>
-            <MenuIcon/>
-        </Button>
-        <Button color="secondary" onClick={showDoneTickets}>
-            Done tickets
-        </Button>
-        <Button color="secondary" onClick={showOpenTickets}>
-             Open tickets
-        </Button>
-        </>
+        </Button>:''
+    }
+    {
+        <div style={{width:!openSideBar?'0%':'20%'}}  id="sidebar">
+            <Button  onClick={()=>{setOpenSideBar(!openSideBar)}}>
+                <ArrowForwardIcon id="ArrowForwardIcon"/>
+            </Button>
+            <Button  onClick={showDoneTickets}>
+                Done tickets
+            </Button>
+            <Button id="openTicketsButton" onClick={showOpenTickets}>
+                Open tickets
+            </Button>
+        </div>
 
     }
         
-    </div>
+    </>
 )
 }
 

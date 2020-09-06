@@ -28,7 +28,7 @@ function DoneTickets({ tickets, undoneThisTicket }) {
     <div id="thisTicketsDone">
       <h1 id="listTitle">DONE TICKETS</h1>
       {doneTikets.length===0?
-      <div>there aren't done tickets</div>:
+      <h1 id="noDoneTickets">There are not done tickets</h1>:
         <div id="results">
           Showing:
           {' '}
@@ -40,8 +40,8 @@ function DoneTickets({ tickets, undoneThisTicket }) {
       {
         tickets.length===0 &&
         <div id="noResult">
-          <SearchIcon/>
-          <p>No result</p>
+          <SearchIcon id="SearchIcon"/>
+          <h2>There are not search result</h2>
         </div>
       }
       {

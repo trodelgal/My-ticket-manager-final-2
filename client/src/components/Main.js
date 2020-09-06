@@ -65,7 +65,7 @@ function Main() {
           <h1 id="mainTitle">TICKETS MANAGER</h1>
           <p id="secondTitle">"WE ARE HERE TO HELP OUR CLIENTS"</p>
         </div>
-        <input id="searchInput" placeholder="Search tickets" onChange={(e) => setSearch(e.target.value)} />
+        <input id="searchInput" placeholder="Search tickets by title" onChange={(e) => setSearch(e.target.value)} />
         <SideBar showDoneTickets={showDoneTickets} showOpenTickets={showOpenTickets}/>
       </div>
       <div className="mainPart">

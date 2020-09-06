@@ -45,23 +45,27 @@ function Ticket({
   return (
     <div className="liveTicketList">
       <h1 id="listTitle">OPEN TICKETS</h1>
-      <div id="results">
-        Showing:
-        {' '}
-        {openTikets.length}
-        {' '}
-        results (
-        <span id="hideTicketsCounter">{numberOfTicketsInHideList}</span>
-        {' '}
-        hidden tickets
-        {restoreButton}
-        )
-      </div>
+    
+     
       {
-        tickets.length===0 &&
+        tickets.length===0?
         <div id="noResult">
-          <SearchIcon/>
-          <p>No result</p>
+          <SearchIcon id="SearchIcon"/>
+          <h2>There are not search result</h2>
+        </div>:
+        <div id="results">
+          Showing:
+          {' '}
+          {openTikets.length}
+          {' '}
+          results 
+          <br/>
+          (
+                    <span id="hideTicketsCounter">{numberOfTicketsInHideList}</span>
+          {' '}
+          hidden tickets
+          {restoreButton}
+          )
         </div>
       }
       {
