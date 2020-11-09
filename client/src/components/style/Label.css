@@ -1,0 +1,16 @@
+.label {
+	box-shadow:inset 0px 1px 0px 0px #f1b4b4;
+	background:linear-gradient(to bottom, #f5aaaa 5%, #f5c0c0 100%);
+	background-color:#f3bcbc;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #ffffff;
+    margin: 3px 3px;
+}

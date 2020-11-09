@@ -1,0 +1,129 @@
+#searchLine{
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    z-index:100;
+    top: 0px;
+    height: 90px;
+    width: 100%;
+    background-color: rgb(6, 26, 65);
+}
+
+#webTitle {
+    width: 25%;
+    height: 90px;
+    position: relative;
+    margin-top: 0px;
+    padding-left: 15px;
+    background-color: rgb(255, 255, 255);
+  }
+#webTitle:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 90px 90px;
+    border-color: transparent transparent rgb(6, 26, 65) transparent;
+}
+#mainTitle{
+    font-size: 25px;
+    margin-top: 0px;
+    padding: 0px;
+    color: rgb(6, 26, 65); 
+}
+#secondTitle{
+    width: 160px;
+    white-space: wrap;
+    font-size: 14px;
+    color: rgb(6, 26, 65); 
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+}
+
+#searchInput{
+    padding: 0.5rem 1rem;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    width: 50%;
+    font-size: 1.15rem;
+    margin: 0.20rem;
+    border-radius: 25px;
+    margin-right: 80px;
+    margin-top: 20px;
+}
+
+.mainPart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#seeMoreButton{
+    color:blue;
+    text-decoration: underline;
+}
+
+
+@media all and (max-width: 1100px) {
+    #mainTitle{
+        font-size: 26px
+    }
+    #secondTitle{
+        font-size: 12px;
+    }
+    #navButtons{
+        margin-right:15px;
+        margin-top: 10px;
+        
+    }
+    #secondTitle{
+        display: none; 
+    }
+}
+@media all and (max-width: 900px) {
+    #mainTitle{
+        font-size: 20px
+    }
+    #navButtons{
+        margin-right:15px;
+        margin-top: 10px;  
+    }
+}
+@media all and (max-width: 700px) {
+    #webTitle {
+        display: none;
+    }
+    #secondTitle{
+        display: none; 
+    }
+    #navButtons{
+        margin-right:15px;
+        margin-top: 10px;
+    }
+    a{
+        color: white;
+        font-size: 10px
+    }
+}
+@media all and (max-width: 600px) {
+    #navButtons{
+        margin-top: 10px;
+    }
+    a{
+        color: white;
+        font-size: 10px
+    }
+}
+@media all and (max-width: 500px) {
+      #searchInput{
+          width: 75%;
+      }
+}
+
+

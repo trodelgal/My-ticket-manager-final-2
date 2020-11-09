@@ -1,0 +1,89 @@
+.liveTicketList, #thisTicketsDone{
+    width: 75%;    
+}
+.ticket, .doneTicket{
+    position: relative;
+    margin: 8px 8px;
+    background-color:white;
+    border-radius: 15px;
+}
+#listTitle{
+    position: relative;
+    margin-left: 39%;
+    text-decoration: underline;
+}
+.ticket:hover{
+    -webkit-box-shadow: 2px 5px 12px 5px rgba(0,0,0,0.7); 
+    box-shadow: 2px 5px 12px 5px rgba(0,0,0,0.7);
+}
+.hideTicketButton{
+    position: absolute;
+    right: 60px;
+    bottom: 5px;  
+    cursor: pointer;
+}
+.doneButton{
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    cursor: pointer;
+}
+.labelsContainer{
+    display: flex;
+}
+.userEmail{
+    margin-right: 10px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.date{
+    font-family: 'Ubuntu', sans-serif;
+}
+#results{
+    position: relative;
+    margin-left: 42%;
+}
+.content{
+    margin: 10px;
+    margin-bottom: 5px;
+    width: 85%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis; 
+}
+.fullContent{
+    margin: 10px;
+    margin-bottom: 0%;
+    width: 85%;
+    white-space: pre-wrap;
+}
+.ticketTitle{
+    margin-left: 15px;
+}
+#restoreHideTickets{
+    color:blue;
+}
+#noDoneTickets{
+    position: relative;
+    margin-left: 31%;
+    margin-top:50px;
+}
+#noResult{
+    width: 100%;
+    position: relative;
+    left: 35%;
+}
+#SearchIcon{
+    position: absolute;
+    margin-top:5%;
+    right: 65%;
+    width: 300px;
+    height: 300px;
+}
+
+@media all and (max-width: 700px) {
+    .liveTicketList, #thisTicketsDone{
+        width: 85%;    
+    }
+}
