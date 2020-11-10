@@ -1,4 +1,6 @@
-# My work
+# TICKETS MANAGER
+* App work with react at client side and express for server side.
+* Styling with muterial ui
 
 ## Explanation of the site:
 * My tickets manager receives all the tickets from server and show them on the screen.
@@ -7,12 +9,10 @@
 * You have an option to hide the ticket, after hidding above the first ticket you can find the number of hidden tickets and option to restore them.
 * You can see all the ticket content by clicking on the see more button.
 * When you done with the ticket you can move it to the done tickets list by clicking on the done button.
-* Done button change the ticket also in the server so the ticket will stay in the done list afer reloading.
-* You have an option to move back the ticket to the tickets list by using "reopen ticket" button. 
-* At the top navigation bar you can find 2 buttons
+* You have an option to move back the ticket to the open tickets list by using "reopen ticket" button. 
+* At the side bar you can find 2 buttons
 * Done tickets- send you by click to done tickets list.
-* Tickets- send you by click to tickets list.
-* I added 2 client tests: the first check the done button, the second check the see more button.
+* Open tickets- send you by click to open tickets list.
 
 ## Gif of the site:
 ![site](./readme-files/site.gif)
