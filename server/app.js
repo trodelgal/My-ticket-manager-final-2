@@ -6,6 +6,7 @@ const fs = require('fs').promises;
 const dataPathFile = './data.json';
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('../client/build'))
 
 // GET THE TICKETS FROM DATA.JSON FILTER BY SEARCH TEXT
 
